@@ -1,0 +1,21 @@
+php artisan make:migration create_users_table
+php artisan make:migration create_posts_table
+
+INSERT INTO users (name, email) VALUES
+('John Doe', 'john.doe@example.com'),
+('Jane Smith', 'jane.smith@example.com'),
+('Alice Johnson', 'alice.johnson@example.com'),
+('Bob Williams', 'bob.williams@example.com');
+
+
+INSERT INTO posts (title, description, user_id, created_at, updated_at) VALUES
+('How to Learn PHP', 'A complete guide to learning PHP for beginners.', 1, NOW(), NOW()),
+('Laravel Tips and Tricks', 'Useful Laravel tips to improve your workflow and productivity.', 2, NOW(), NOW()),
+('Understanding MySQL Joins', 'This post explains the different types of MySQL joins with examples.', 3, NOW(), NOW()),
+('Best Practices for REST APIs', 'A guide to building efficient and scalable REST APIs.', 4, NOW(), NOW()),
+
+php artian make:model User
+php artian make:model Post
+php artisan make:controller UserController --resource
+php artisan make:controller PostController --resource
+
